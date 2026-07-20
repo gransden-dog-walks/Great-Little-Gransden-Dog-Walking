@@ -5,28 +5,66 @@
   <title>FAQ – Gransden Dog Walking</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-    header, footer { background: #17252a; color: #fff; padding: 1rem; text-align: center; }
-    nav a { color: #fff; margin: 0 0.7rem; text-decoration: none; }
-    main { max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 10px; }
-    h1 { color: #17252a; }
-    .faq { margin-bottom: 1.5rem; }
-    .faq strong { display: block; margin-bottom: 0.3rem; }
+    /* HEADER + NAVIGATION */
+    header { background:#17252a; padding:1rem; }
+    .nav { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .site-title { color:#fff; font-size:1.2rem; text-decoration:none; font-weight:bold; }
+    .nav-buttons { display:flex; gap:0.6rem; }
+    .nav-btn {
+      background:#2b7a78;
+      color:#fff;
+      padding:0.55rem 1rem;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:0.95rem;
+      transition:background 0.2s ease, transform 0.15s ease;
+    }
+    .nav-btn:hover {
+      background:#3aafa9;
+      transform:translateY(-2px);
+    }
+
+    /* PAGE LAYOUT */
+    body { font-family:Arial,sans-serif; margin:0; background:#f5f5f5; }
+    main {
+      max-width:900px;
+      margin:2rem auto;
+      background:#fff;
+      padding:2rem;
+      border-radius:10px;
+    }
+    h1 { color:#17252a; }
+
+    /* FAQ ITEMS */
+    .faq { margin-bottom:1.5rem; }
+    .faq strong { display:block; margin-bottom:0.3rem; }
+
+    /* FOOTER */
+    footer {
+      background:#17252a;
+      color:#fff;
+      padding:1rem;
+      text-align:center;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav">
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">Great &amp; Little Gransden dog walking</a>
-      <nav>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">Home</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/about/">About</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/services/">Services</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/gallery/">Gallery</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/contact/">Contact</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/faq/">FAQ</a>
-  </nav>
+<header>
+  <div class="nav">
+    <a class="site-title" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">
+      Great &amp; Little Gransden Dog Walking
+    </a>
+
+    <nav class="nav-buttons">
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">Home</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/about/">About</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/services/">Services</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/gallery/">Gallery</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/contact/">Contact</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/faq/">FAQ</a>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -34,33 +72,14 @@
 
   <div class="faq">
     <strong>Where do you walk dogs?</strong>
-    Around Great & Little Gransden using safe, familiar routes.
+    Around Great & Little Gransden using safe, familiar village routes.
   </div>
 
   <div class="faq">
-    <strong>Do you walk reactive dogs?</strong>
-    Yes — solo walks only, with calm routes.
+    <strong>Do you walk reactive or nervous dogs?</strong>
+    Yes — reactive or nervous dogs are walked solo on calm, quiet routes.
   </div>
 
   <div class="faq">
-    <strong>Can we meet first?</strong>
-    Yes, I offer a free meet‑and‑greet in your village.
-  </div>
-
-  <div class="faq">
-    <strong>Do you walk in bad weather?</strong>
-    Light rain is fine; extreme weather may require rescheduling.
-  </div>
-
-  <div class="faq">
-    <strong>How do I pay?</strong>
-    Bank transfer or cash, weekly or monthly.
-  </div>
-</main>
-
-<footer>
-  &copy; 2026 Great & Little Gransden Dog Walking
-</footer>
-
-</body>
-</html>
+    <strong>Can we meet before booking?</strong>
+    Absolutely
