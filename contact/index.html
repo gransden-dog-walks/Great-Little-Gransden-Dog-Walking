@@ -5,42 +5,41 @@
   <title>Contact – Gransden Dog Walking</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-    header, footer { background: #17252a; color: #fff; padding: 1rem; text-align: center; }
-    nav a { color: #fff; margin: 0 0.7rem; text-decoration: none; }
-    main { max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 10px; }
-    h1 { color: #17252a; }
-    form { display: grid; gap: 1rem; }
-    input, textarea { width: 100%; padding: 0.7rem; border-radius: 6px; border: 1px solid #ccc; }
-    button { padding: 0.7rem; background: #2b7a78; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+    header { background:#17252a; padding:1rem; }
+    .nav { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .site-title { color:#fff; font-size:1.2rem; text-decoration:none; font-weight:bold; }
+    .nav-buttons { display:flex; gap:0.6rem; }
+    .nav-btn { background:#2b7a78; color:#fff; padding:0.55rem 1rem; border-radius:8px;
+               text-decoration:none; font-size:0.95rem; transition:background 0.2s, transform 0.15s; }
+    .nav-btn:hover { background:#3aafa9; transform:translateY(-2px); }
+    body { font-family:Arial,sans-serif; margin:0; background:#f5f5f5; }
+    main { max-width:900px; margin:2rem auto; background:#fff; padding:2rem; border-radius:10px; }
+    h1 { color:#17252a; }
+    form { display:grid; gap:1rem; }
+    input, textarea { width:100%; padding:0.7rem; border-radius:6px; border:1px solid #ccc; }
+    button { padding:0.7rem; background:#2b7a78; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+    footer { background:#17252a; color:#fff; padding:1rem; text-align:center; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav">
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">Great &amp; Little Gransden dog walking</a>
-      <nav>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">Home</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/about/">About</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/services/">Services</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/gallery/">Gallery</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/contact/">Contact</a>
-    <a href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/faq/">FAQ</a>
-  </nav>
+<header>
+  <div class="nav">
+    <a class="site-title" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">
+      Great &amp; Little Gransden Dog Walking
+    </a>
+    <nav class="nav-buttons">
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/">Home</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/about/">About</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/services/">Services</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/gallery/">Gallery</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/contact/">Contact</a>
+      <a class="nav-btn" href="https://gransden-dog-walks.github.io/Great-Little-Gransden-Dog-Walking/faq/">FAQ</a>
+    </nav>
+  </div>
 </header>
 
 <main>
   <h1>Contact & Bookings</h1>
 
-  <p><strong>Phone:</strong> 07700 900123 (replace with your real number)</p>
-  <p><strong>Email:</strong> hello@gransdendogwalking.co.uk</p>
-
-<iframe width="640px" height="800px" src="https://forms.office.com/r/ahtzrtuPKW?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-
-<footer>
-  &copy; 2026 Great & Little Gransden Dog Walking
-</footer>
-
-</body>
-</html>
+  <p><strong>Phone
