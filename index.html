@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Great & Little Gransden Dog Walking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #2b7a78;
+      --secondary: #17252a;
+      --accent: #feffff;
+      --bg: #def2f1;
+      --text: #222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--secondary);
+      color: var(--accent);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem 1.5rem;
+      background: var(--accent);
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--secondary);
+    }
+
+    .hero p.lead {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .badge {
+      background: var(--bg);
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.85rem;
+      border: 1px solid #c4dfe6;
+    }
+
+    .hero-buttons {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--accent);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #2b7a78 0%, #3aafa9 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      color: var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-paw {
+      font-size: 3rem;
+      opacity: 0.2;
+      position: absolute;
+      right: 1rem;
+      bottom: 0.5rem;
+    }
+
+    .hero-image h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-image p {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--secondary);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+      gap: 2rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: var(--accent);
+      border-radius: 10px;
+      padding: 1.2rem;
+      border: 1px solid #c4dfe6;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: var(--secondary);
+    }
+
+    .price {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    ul {
+      margin-left: 1.1rem;
+      margin-top: 0.4rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery-item {
+      background: var(--accent);
+      border-radius: 10px;
+      padding: 0.9rem;
+      border: 1px dashed #c4dfe6;
+      font-size: 0.9rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .contact-details p {
+      margin-bottom: 0.4rem;
+    }
+
+    form {
+      background: var(--accent);
+      border-radius: 10px;
+      padding: 1.2rem;
+      border: 1px solid #c4dfe6;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+      font-weight: 600;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #c4dfe6;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .faq-list {
+      margin-top: 0.8rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.7rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    footer {
+      background: var(--secondary);
+      color: var(--accent);
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .two-column,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        position: static;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Great &amp; Little Gransden Dog Walking</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+    <section class="hero">
+      <div>
+        <h1>Friendly Local Dog Walking in Great &amp; Little Gransden</h1>
+        <p class="lead">
+          Reliable, village‑based dog walking for busy owners in Great Gransden and Little Gransden.
+          Safe routes, calm walks, and genuine care for your dog.
+        </p>
+        <ul class="badge-list">
+          <li class="badge">Fully insured</li>
+          <li class="badge">Local resident</li>
+          <li class="badge">Flexible bookings</li>
+          <li class="badge">Solo &amp; group walks</li>
+          <li class="badge">Great for nervous dogs</li>
+        </ul>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Book a walk</a>
+          <a href="#services" class="btn btn-outline">View services &amp; prices</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <h2>Walks your dog will love</h2>
+        <p>
+          From gentle village strolls to longer countryside adventures, each walk is tailored to your
+          dog’s age, energy and personality.
+        </p>
+        <p>
+          Covering Great Gransden &amp; Little Gransden, with familiar footpaths, fields and quiet lanes.
+        </p>
+        <div class="hero-paw">🐾</div>
+      </div>
+    </section>
+
+  <main>
+    <section id="about">
+      <h2>About your local dog walker</h2>
+      <div class="two-column">
+        <div>
+          <p>
+            Based in <strong>Great Gransden</strong>, I offer dedicated dog‑walking for both Great and
+            Little Gransden. I know the local routes, the quiet cut‑throughs, and the best spots for
+            safe off‑lead time (where appropriate).
+          </p>
+          <p>
+            I walk:
+          </p>
+          <ul>
+            <li>Puppies needing short, positive outings</li>
+            <li>Adult dogs who love regular exercise</li>
+            <li>Senior dogs who prefer a slower pace</li>
+            <li>Nervous or shy dogs who need calm handling</li>
+          </ul>
+          <p>
+            My focus is on gentle, consistent routines so your dog feels relaxed and happy every time
+            they go out.
+          </p>
+        </div>
+        <div>
+          <p><strong>What you can expect:</strong></p>
+          <ul>
+            <li>Meet‑and‑greet before the first walk</li>
+            <li>Walks tailored to your dog’s needs and energy</li>
+            <li>Fresh water and towel‑dry if needed after wet walks</li>
+            <li>Updates after each walk (optional)</li>
+          </ul>
+          <p>
+            If you’re at work, away for the day, or just need an extra hand, I’ll make sure your dog
+            gets the exercise and attention they deserve.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services &amp; prices</h2>
+      <p>
+        All walks take place in and around Great &amp; Little Gransden. Pick the option that suits your
+        dog best, or ask for a custom plan.
+      </p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Standard Walk</h3>
+          <div class="price">£12 · 30 minutes</div>
+          <p>
+            Ideal for daily exercise and a good leg stretch around the village.
+          </p>
+          <ul>
+            <li>Solo or with another compatible dog from the same household</li>
+            <li>On‑lead walk using safe local routes</li>
+            <li>Perfect for most adult dogs</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Long Adventure</h3>
+          <div class="price">£18 · 60 minutes</div>
+          <p>
+            A longer countryside walk with plenty of sniffing and exploring.
+          </p>
+          <ul>
+            <li>Mix of footpaths, fields and quiet lanes</li>
+            <li>Great for energetic dogs</li>
+            <li>Can include off‑lead time where safe and agreed</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Puppy Visits</h3>
+          <div class="price">£10 · 20–25 minutes</div>
+          <p>
+            Short, gentle visits for young pups who aren’t ready for full walks yet.
+          </p>
+          <ul>
+            <li>Toilet break and fresh water</li>
+            <li>Playtime and basic lead practice</li>
+            <li>Helps build confidence and routine</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Group Walks</h3>
+          <div class="price">£10 per dog · 45 minutes</div>
+          <p>
+            Small, friendly groups for social dogs who enjoy company.
+          </p>
+          <ul>
+            <li>Maximum of 3 dogs per group</li>
+            <li>Carefully matched by size and temperament</li>
+            <li>Great for building social skills</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:1rem;font-size:0.9rem;">
+        Prices include collection and drop‑off within Great &amp; Little Gransden. Bank holidays and
+        weekends may carry a small surcharge.
+      </p>
+    </section>
+
+    <section id="gallery">
+      <h2>Local routes &amp; happy dogs</h2>
+      <p>
+        Here are some ideas for photos you can add to this section once your walks are underway.
+      </p>
+      <div class="gallery">
+        <div class="gallery-item">
+          <strong>Village footpaths</strong><br />
+          A photo of a dog walking along a quiet Great Gransden footpath with hedgerows on either side.
+        </div>
+        <div class="gallery-item">
+          <strong>Open fields</strong><br />
+          A dog on‑lead or off‑lead (where safe) enjoying the open fields near Little Gransden.
+        </div>
+        <div class="gallery-item">
+          <strong>Woodland edges</strong><br />
+          A calm walk along the edge of woodland, showing the peaceful countryside setting.
+        </div>
+        <div class="gallery-item">
+          <strong>Happy faces</strong><br />
+          Close‑up shots of dogs after their walk—tongues out, relaxed and content.
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact &amp; bookings</h2>
+      <div class="contact-grid">
+        <div class="contact-details">
+          <p><strong>Based in:</strong> Great Gransden, covering both Great &amp; Little Gransden.</p>
+          <p><strong>Phone:</strong> 07700 900123 (sample number – replace with your own)</p>
+          <p><strong>Email:</strong> hello@gransdendogwalking.co.uk (sample email – replace with your own)</p>
+          <p style="margin-top:0.6rem;">
+            Get in touch to arrange a free meet‑and‑greet in your village. We’ll chat about your dog,
+            their routine, and the kind of walks they enjoy.
+          </p>
+        </div>
+        <div>
+          <form>
+            <h3 style="margin-bottom:0.6rem;">Enquiry form</h3>
+            <label for="name">Your name</label>
+            <input id="name" type="text" name="name" placeholder="e.g. Harry Smith" />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" />
+
+            <label for="phone">Phone number</label>
+            <input id="phone" type="tel" name="phone" placeholder="Optional" />
+
+            <label for="dog">Your dog’s name &amp; breed</label>
+            <input id="dog" type="text" name="dog" placeholder="e.g. Bella, Labrador" />
+
+            <label for="service">Service you’re interested in</label>
+            <select id="service" name="service">
+              <option value="">Please choose…</option>
+              <option value="standard">Standard Walk (30 mins)</option>
+              <option value="long">Long Adventure (60 mins)</option>
+              <option value="puppy">Puppy Visits</option>
+              <option value="group">Group Walks</option>
+              <option value="other">Something else / not sure yet</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about your dog and what you’re looking for."></textarea>
+
+            <button type="submit" class="btn btn-primary" style="margin-top:0.3rem;">Send enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <strong>Where do you walk dogs?</strong>
+          Mostly around Great &amp; Little Gransden—using local footpaths, fields and quiet lanes that
+          are familiar and safe.
+        </div>
+        <div class="faq-item">
+          <strong>Do you walk reactive or nervous dogs?</strong>
+          Yes. Reactive or nervous dogs are walked solo, with calm routes and plenty of space from
+          other dogs and people.
+        </div>
+        <div class="faq-item">
+          <strong>Can I meet you before booking?</strong>
+          Absolutely. I offer a free meet‑and‑greet in your village so you and your dog can get to
+          know me first.
+        </div>
+        <div class="faq-item">
+          <strong>Do you walk in bad weather?</strong>
+          Light rain is fine, but in extreme weather (heatwaves, storms, ice) we’ll discuss shorter
+          walks or rearranging for safety.
+        </div>
+        <div class="faq-item">
+          <strong>How do I pay?</strong>
+          Bank transfer or cash, usually weekly or monthly depending on how often your dog is walked.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Great &amp; Little Gransden Dog Walking · Local dog‑walking for Great &amp; Little Gransden.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
